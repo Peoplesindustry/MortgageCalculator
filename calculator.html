@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Mortgage Calculator</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+        }
+        .calculator-container {
+            text-align: center;
+            margin-top: 30px;
+            background: linear-gradient(135deg, #1E88E5, #1976D2);
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #1976D2;
+        }
+        .tab.active {
+            background-color: #1E88E5;
+        }
+        input, select, button {
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+        }
+        .highlight {
+            color: gold;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>Mortgage Calculator</h2>
+        <div class="tabs">
+            <div class="tab active" onclick="toggleTab('monthly-payment')">Monthly Payment</div>
+            <div class="tab" onclick="toggleTab('purchase-price')">Purchase Price</div>
+        </div>
+        
+        <!-- Monthly Payment Calculator -->
+        <div id="monthly-payment" class="tab-content active">
+            <!-- Content for the monthly payment calculator goes here -->
+            <h3>Monthly Payment Calculator</h3>
+            <input type="number" id="purchase-price" placeholder="Purchase price">
+            <input type="number" id="down-payment" placeholder="Down payment">
+            <input type="number" id="interest-rate" placeholder="Interest rate (%)">
+            <input type="number" id="loan-term" placeholder="Loan term (years)">
+            <button onclick="calculateMonthlyPayment()">Calculate</button>
+            <div id="monthly-payment-result"></div>
+        </div>
+        
+        <!-- Purchase Price Calculator -->
+        <div id="purchase-price" class="tab-content">
+            <!-- Content for the purchase price calculator goes here -->
+            <h3>Purchase Price Calculator</h3>
+            <input type="number" id="annual-income" placeholder="Annual household income">
+            <input type="number" id="monthly-debts" placeholder="Monthly debts">
+            <input type="number" id="down-payment-amount" placeholder="Down payment">
+            <input type="number" id="loan-term-years
